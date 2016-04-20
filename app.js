@@ -230,8 +230,8 @@ var self = {
         request('http://gps.buienradar.nl/getrr.php?lat=' + lat + '&lon=' + lon, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 var array = "000|16:05 000|16:10 000|16:15 000|16:20 000|16:25 025|16:30 052|16:35 040|16:40 050|16:45 060|16:50 070|16:55 080|15:00 000|15:05 000|15:10 000|15:15 000|15:20 000|15:25 000|15:30 000|15:35 000|15:40 000|15:45 000|15:50 000|15:55 000|16:00 000|16:05";
-                var dataArray = array.split(' '); //Enable this line again when using testing string instead of the real weather
-                //var dataArray = body.split('\r\n'); //split into seperate items
+                //var dataArray = array.split(' '); //Enable this line again when using testing string instead of the real weather
+                var dataArray = body.split('\r\n'); //split into seperate items
 
                 Homey.log ("dataArray: " + dataArray); //location
 
